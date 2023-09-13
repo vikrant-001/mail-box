@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import classes from "./InboxMail.module.css"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {authActions} from '../Auth/AuthSlice'
+import { authActions } from '../Auth/AuthSlice'
 
 const InboxMail = () => {
     const dispatch = useDispatch()
@@ -34,7 +34,10 @@ const InboxMail = () => {
 
         for(let i = 0 ; i < values.length;i++){
             values[i].id = key[i];
+            values[i].read = false;
         }
+    
+        
         console.log(values)
         setUserMail(values);
     }
@@ -48,8 +51,12 @@ const InboxMail = () => {
     }
 
     const detailHandler = (item) =>{
+        const newdata = userMail.findIndex((value) => value.id === item.id);
+        userMail[newdata].read =  true;
+        setUserMail(userMail);
+        console.log('new : ',userMail)
         dispatch(authActions.setItem(item))
-        setRead(true)
+        setRead(true);
     }
 
     const deleteHandler = async (id) => {
@@ -93,7 +100,7 @@ const InboxMail = () => {
                     <p>{item.from}</p>
                     <p>{item.mailDis}</p>
                     <button className={classes.btn2} onClick={deleteHandler.bind(null,item.id)}>Del</button>
-                    <Link to={'/mailDetails'}><button  className={read ? classes.btn2 : classes.btn} onClick = {detailHandler.bind(null,item)}>Read</button></Link>
+                    <NavLink to={'/mailDetails'}  ><button onClick = {detailHandler.bind(null,item)} className={item.read ? classes.btn2 : classes.btn}>Read</button></NavLink>
                 </div>
             ))
         }

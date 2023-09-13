@@ -3,7 +3,7 @@
     height: 500px;
     background-color: azure;
     margin: 0 auto;
-    margin-top: -5rem;
+    margin-top: -10rem;
     color: black;
     display: flex;
 }
@@ -15,4 +15,5 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 3rem;
+    
 }
