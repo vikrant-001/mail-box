@@ -77,6 +77,7 @@ const LoginSign = () => {
 
       console.log("logged in",data);
       dispatch(authActions.login(data.idToken));
+      localStorage.setItem('email',data.email)
     }
     catch(error){
       alert(error);

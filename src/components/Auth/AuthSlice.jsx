@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialToken = localStorage.getItem('token');
-const authInitialState = {token:initialToken};
+const authInitialState = {token:initialToken ,itemView:{}};
 
 const authSlice = createSlice({
     name:'auth',
@@ -15,6 +15,9 @@ const authSlice = createSlice({
         logout(state) {
             state.token = null
             localStorage.removeItem('token');
+        },
+        setItem(state,action){
+            state.itemView = action.payload;
         }
     }
 })

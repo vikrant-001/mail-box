@@ -1,0 +1,28 @@
+.contInbox{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.inboxDis{
+    display:flex;
+    justify-content: space-around;
+    background-color: bisque;
+}
+
+.btn{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.2rem;
+    margin-top: 1rem;
+    background: red;
+    color: white;
+}
+
+.btn2{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.2rem;
+    margin-top: 1rem;
+    background: black;
+    color: white;
+}

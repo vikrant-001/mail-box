@@ -1,0 +1,18 @@
+.detailCont{
+    width: 80%;
+    height: 500px;
+    background-color: azure;
+    margin: 0 auto;
+    margin-top: -5rem;
+    color: black;
+    display: flex;
+}
+
+.card{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
